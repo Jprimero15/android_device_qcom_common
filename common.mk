@@ -172,14 +172,6 @@ ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
 # Filesystem
 TARGET_FS_CONFIG_GEN += $(QCOM_COMMON_PATH)/config.fs
 
-# Set HAL pathmaps
-include $(QCOM_COMMON_PATH)/pathmap.mk
-
-$(call set-device-specific-path,AUDIO,audio,hardware/qcom/$(QCOM_HARDWARE_VARIANT)/audio)
-$(call set-device-specific-path,DISPLAY,display,hardware/qcom/$(QCOM_HARDWARE_VARIANT)/display)
-$(call set-device-specific-path,GPS,gps,hardware/qcom/$(QCOM_HARDWARE_VARIANT)/gps)
-$(call set-device-specific-path,MEDIA,media,hardware/qcom/$(QCOM_HARDWARE_VARIANT)/media)
-
 # Components
 include $(QCOM_COMMON_PATH)/components.mk
 
